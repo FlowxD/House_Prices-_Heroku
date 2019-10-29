@@ -1,0 +1,51 @@
+"""
+Created on Mon Oct 28 14:20:17 2019
+
+@author: Mandar Joshi
+"""
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Pridict House Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" step="any" name="TotalSF" placeholder="TotalSF" required="required" />
+        <input type="number" step="any" name="OverallQual" placeholder="OverallQual" required="required" />
+		<input type="number" step="any" name="GrLivArea" placeholder="GrLivArea" required="required" />
+		<input type="number" step="any" name="GarageCars" placeholder="GarageCars" required="required" />
+		<input type="number" step="any" name="1stFlrSF" placeholder="1stFlrSF" required="required" />
+		<input type="number" step="any" name="YearBuilt" placeholder="YearBuilt" required="required" />
+		<input type="number" step="any" name="FullBath" placeholder="FullBath" required="required" />
+		<input type="number" step="any" name="YearRemodAdd" placeholder="YearRemodAdd" required="required" />
+		<input type="number" step="any" name="TotRmsAbvGrd" placeholder="TotRmsAbvGrd" required="required" />
+		<input type="number" step="any" name="GarageArea" placeholder="GarageArea" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <a href="http://127.0.0.1:5000">
+           <input type="button" value="Reset" />
+        </a>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
